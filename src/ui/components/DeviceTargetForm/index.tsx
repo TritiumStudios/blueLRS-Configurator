@@ -40,7 +40,7 @@ const DeviceTargetForm: FunctionComponent<FirmwareVersionCardProps> = ({
 
   const { t } = useTranslation();
 
-  const categorySelectOptions = useMemo(() => {
+  /* const categorySelectOptions = useMemo(() => {
     if (deviceTargets === null) {
       return [];
     }
@@ -74,6 +74,39 @@ const DeviceTargetForm: FunctionComponent<FirmwareVersionCardProps> = ({
       .sort((a, b) => {
         return a.label.toLowerCase() > b.label.toLowerCase() ? 1 : -1;
       });
+  }, [deviceTargets, currentCategory]); */
+
+  const categorySelectOptions = useMemo(() => {
+    if (!deviceTargets) return [];
+
+    const categories = deviceTargets
+      .map((item) => item.category)
+      .filter((value, index, array) => array.indexOf(value) === index);
+
+    return categories
+      .map((category) => {
+        // Only change the label, keep value the same
+        let label = category;
+        if (category === 'Happymodel 2.4 GHz')
+          label = 'Ewing Aerospace 2.4 GHz';
+        return { label, value: category };
+      })
+      .sort((a, b) => (a.label.toLowerCase() > b.label.toLowerCase() ? 1 : -1));
+  }, [deviceTargets]);
+
+  const deviceSelectOptions = useMemo(() => {
+    if (!deviceTargets || !currentCategory) return [];
+
+    return deviceTargets
+      .filter((item) => item.category === currentCategory) // use internal value
+      .map((item) => {
+        let label = item.name;
+        if (item.name.includes('HappyModel PP 2.4GHz RX')) {
+          label = 'Ewing Aerospace 2.4GHz RX';
+        }
+        return { label, value: item.id };
+      })
+      .sort((a, b) => (a.label.toLowerCase() > b.label.toLowerCase() ? 1 : -1));
   }, [deviceTargets, currentCategory]);
 
   // Used when currentTarget is changed from Network devices popup

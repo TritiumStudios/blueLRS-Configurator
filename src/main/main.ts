@@ -439,8 +439,9 @@ const createWindow = async () => {
     }
 
     // set the window title based on package.json
-    const windowTitle = require('../../release/app/package.json').productName;
-    mainWindow.setTitle(windowTitle);
+    // const windowTitle = require('../../release/app/package.json').productName;
+    // mainWindow.setTitle(windowTitle);
+    mainWindow.setTitle('BlueLRS Configurator');
   });
 
   mainWindow.on('closed', () => {
@@ -483,7 +484,7 @@ if (!isOSSupported) {
         .showMessageBox(undefined, {
           type: 'error',
           buttons: ['Okay'],
-          title: 'ExpressLRS Configurator',
+          title: 'BlueLRS Configurator',
           detail: 'Unsupported OS Version Detected',
           message: ``,
         })

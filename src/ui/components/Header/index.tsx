@@ -66,9 +66,9 @@ const Header: FunctionComponent = memo(() => {
         <Box sx={styles.logotype}>
           <img src={LogotypeIcon} alt={t('Header.ExpressLRSConfigurator')} />
           <Typography variant="h4" sx={styles.title}>
-            {t('Header.ExpressLRSConfigurator')}{' '}
+            BlueLRS Configurator
             <Box component="span" sx={styles.version}>
-              v{process.env.EXPRESSLRS_CONFIGURATOR_VERSION}
+              v1.0.0
             </Box>
             {updateResponse?.checkForUpdates?.updateAvailable && (
               <Box
