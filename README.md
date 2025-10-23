@@ -101,10 +101,6 @@ system language if a translation into this language is available.
 If you prefer to have the application in English or any other language, you can select your desired language in the
 "Settings" menu.
 
-Our localisation progress:
-
-![Translations progress](https://badges.awesome-crowdin.com/translation-15884405-596659-update.png)
-
 ## Architecture
 
 ```
