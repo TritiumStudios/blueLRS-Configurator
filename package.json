@@ -46,13 +46,13 @@
     "appId": "org.expresslrs.configurator",
     "buildDependenciesFromSource": true,
     "files": [
-      "dist/",
-      "release/app/dist/",
-      "main/",
-      "node_modules/",
+      "release/app/**/*",
+      "node_modules/**/*",
       "package.json",
-      "devices/"
+      "dist/**/*",
+      "devices/**/*"
     ],
+
     "afterSign": ".erb/scripts/notarize.js",
     "mac": {
       "target": [
