@@ -11,21 +11,21 @@ interface IConfig {
 }
 
 export const Config: IConfig = {
-  documentationUrl: 'https://www.expresslrs.org/',
-  githubRepositoryUrl: 'https://github.com/ExpressLRS/ExpressLRS',
-  facebookGroupUrl: 'https://www.facebook.com/groups/636441730280366',
-  discordUrl: 'https://discord.gg/dS6ReFY',
-  openCollectiveUrl: 'https://opencollective.com/expresslrs',
+  documentationUrl: 'www.bluelrs.org/',
+  githubRepositoryUrl: 'https://github.com/TritiumStudios/blueLRS',
+  facebookGroupUrl: 'https://www.facebook.com/',
+  discordUrl: 'https://discord.gg/',
+  openCollectiveUrl: 'https://opencollective.com/',
   expressLRSGit: {
-    cloneUrl: 'https://github.com/ExpressLRS/ExpressLRS',
-    url: 'https://github.com/ExpressLRS/ExpressLRS',
-    owner: 'ExpressLRS',
-    repositoryName: 'ExpressLRS',
-    rawRepoUrl: 'https://raw.githubusercontent.com/ExpressLRS/ExpressLRS',
+    cloneUrl: 'https://github.com/TritiumStudios/blueLRS',
+    url: 'https://github.com/TritiumStudios/blueLRS',
+    owner: 'TritiumStudios',
+    repositoryName: 'blueLRS',
+    rawRepoUrl: 'https://raw.githubusercontent.com/TritiumStudios/blueLRS',
     srcFolder: 'src',
     tagExcludes: ['<2.5.0'],
     hardwareArtifactUrl:
-      'https://artifactory.expresslrs.org/ExpressLRS/hardware.zip',
+      'http://bluelrs.io/wp-content/uploads/2025/10/hardware.zip',
   },
   backpackGit: {
     cloneUrl: 'https://github.com/ExpressLRS/Backpack',
