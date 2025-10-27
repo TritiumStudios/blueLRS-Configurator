@@ -220,8 +220,13 @@ const createWindow = async () => {
   };
 
   logger.log('trying to get port');
-  const port = await ApiServer.getPort(3500);
-  logger.log(`received unused port`, { port });
+  let port = 3500;
+  if (process.env.NODE_ENV === 'development') {
+    port = 1212;
+  } else {
+    port = await ApiServer.getPort(3500);
+  }
+  logger.log(`Renderer/API port set to`, { port });
 
   logger.log('starting server...');
   const firmwaresPath = path.join(userDataDirectory, 'firmwares', 'github');
