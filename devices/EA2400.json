@@ -1,0 +1,61 @@
+[
+  {
+    "category": "Ewing Aerospace",
+    "name": "ELRSSX1280TX",
+    "targets": [
+      {
+        "flashingMethod": "DFU",
+        "name": "ELRSSX1280TX_via_DFU"
+      },
+      {
+        "flashingMethod": "STLink",
+        "name": "ELRSSX1280TX_via_STLINK"
+      }
+    ],
+    "userDefines": [
+      "REGULATORY_DOMAIN_ISM_2400",
+      "REGULATORY_DOMAIN_EU_CE_2400",
+      "BINDING_PHRASE",
+      "TLM_REPORT_INTERVAL_MS",
+      "UART_INVERTED",
+      "AUTO_WIFI_ON_INTERVAL",
+      "HOME_WIFI_SSID",
+      "HOME_WIFI_PASSWORD"
+    ],
+    "wikiUrl": "https://www.expresslrs.org/quick-start/transmitters/es24tx/",
+    "deviceType": "ExpressLRS",
+    "aliases": []
+  },
+  {
+    "category": "Ewing Aerospace",
+    "name": "EA2400RX",
+    "targets": [
+      {
+        "flashingMethod": "UART",
+        "name": "HappyModel_EP_2400_RX_via_UART"
+      },
+      {
+        "flashingMethod": "BetaflightPassthrough",
+        "name": "HappyModel_EP_2400_RX_via_BetaflightPassthrough"
+      },
+      {
+        "flashingMethod": "WIFI",
+        "name": "HappyModel_EP_2400_RX_via_WIFI"
+      }
+    ],
+    "userDefines": [
+      "REGULATORY_DOMAIN_ISM_2400",
+      "REGULATORY_DOMAIN_EU_CE_2400",
+      "BINDING_PHRASE",
+      "LOCK_ON_FIRST_CONNECTION",
+      "AUTO_WIFI_ON_INTERVAL",
+      "HOME_WIFI_SSID",
+      "HOME_WIFI_PASSWORD",
+      "RCVR_UART_BAUD",
+      "RCVR_INVERT_TX"
+    ],
+    "wikiUrl": "https://www.expresslrs.org/quick-start/receivers/hmep2400/",
+    "deviceType": "ExpressLRS",
+    "aliases": []
+  }
+]
