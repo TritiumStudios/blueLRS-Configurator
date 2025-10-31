@@ -1,14 +1,10 @@
 import React, { FunctionComponent, memo } from 'react';
 import { AppBar, Box, Toolbar, Typography, IconButton } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import WebIcon from '@mui/icons-material/Web';
 import { SxProps, Theme } from '@mui/system';
 import { useTranslation } from 'react-i18next';
 import { Config } from '../../config';
 import LogotypeIcon from '../../../../assets/logotype.svg';
-import DiscordIcon from '../../../../assets/DiscordIcon.svg';
-import OpenCollectiveIcon from '../../../../assets/OpenCollective.svg';
 import { useCheckForUpdatesQuery } from '../../gql/generated/types';
 
 const styles: Record<string, SxProps<Theme>> = {
@@ -42,19 +38,9 @@ const styles: Record<string, SxProps<Theme>> = {
   link: {
     margin: '0 0 0 0',
   },
-  facebookIcon: {
-    fontSize: '1em !important',
-    marginTop: '-2px',
-  },
-  svgIcon: {
-    width: '24px',
-    height: 'auto',
-  },
 };
-
 const Header: FunctionComponent = memo(() => {
   const { t } = useTranslation();
-
   const { data: updateResponse } = useCheckForUpdatesQuery({
     variables: {
       currentVersion: process.env.EXPRESSLRS_CONFIGURATOR_VERSION || '0.0.1',
@@ -87,44 +73,6 @@ const Header: FunctionComponent = memo(() => {
         <Box sx={styles.social}>
           <Box sx={styles.link}>
             <IconButton
-              href={Config.documentationUrl}
-              target="_blank"
-              title={t('Header.Documentation')}
-              rel="noreferrer noreferrer"
-              size="large"
-            >
-              <WebIcon sx={styles.svgIcon} />
-            </IconButton>
-          </Box>
-          <Box sx={styles.link}>
-            <IconButton
-              href={Config.discordUrl}
-              target="_blank"
-              title={t('Header.Discord')}
-              rel="noreferrer noreferrer"
-              size="large"
-            >
-              <Box
-                component="img"
-                src={DiscordIcon}
-                sx={styles.svgIcon}
-                alt=""
-              />
-            </IconButton>
-          </Box>
-          <Box sx={styles.link}>
-            <IconButton
-              href={Config.facebookGroupUrl}
-              target="_blank"
-              title={t('Header.FacebookGroup')}
-              rel="noreferrer noreferrer"
-              size="large"
-            >
-              <FacebookIcon sx={styles.facebookIcon} />
-            </IconButton>
-          </Box>
-          <Box sx={styles.link}>
-            <IconButton
               href={Config.githubRepositoryUrl}
               target="_blank"
               title={t('Header.Github')}
@@ -134,26 +82,9 @@ const Header: FunctionComponent = memo(() => {
               <GitHubIcon />
             </IconButton>
           </Box>
-          <Box sx={styles.link}>
-            <IconButton
-              href={Config.openCollectiveUrl}
-              target="_blank"
-              title={t('Header.OpenCollective')}
-              rel="noreferrer noreferrer"
-              size="large"
-            >
-              <Box
-                component="img"
-                src={OpenCollectiveIcon}
-                sx={styles.svgIcon}
-                alt=""
-              />
-            </IconButton>
-          </Box>
         </Box>
       </Toolbar>
     </AppBar>
   );
 });
-
 export default Header;
