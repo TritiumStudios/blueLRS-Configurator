@@ -9,7 +9,6 @@ interface IConfig {
   expressLRSGit: GitRepository;
   backpackGit: GitRepository;
 }
-
 export const Config: IConfig = {
   documentationUrl: 'www.bluelrs.org/',
   githubRepositoryUrl: 'https://github.com/TritiumStudios/blueLRS',
@@ -38,5 +37,4 @@ export const Config: IConfig = {
     hardwareArtifactUrl: null,
   },
 };
-
 export default Config;

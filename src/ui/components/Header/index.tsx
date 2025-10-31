@@ -46,6 +46,7 @@ const Header: FunctionComponent = memo(() => {
       currentVersion: process.env.EXPRESSLRS_CONFIGURATOR_VERSION || '0.0.1',
     },
   });
+
   return (
     <AppBar position="static" color="default">
       <Toolbar sx={styles.toolbar}>
